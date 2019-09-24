@@ -7,6 +7,24 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "src/products/models.py",
+			"settings":
+			{
+				"buffer_size": 223,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/products/admin.py",
+			"settings":
+			{
+				"buffer_size": 91,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -56,10 +74,15 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/Eesha/Dev/d_project"
+		"/C/Users/Eesha/Dev/d_project",
+		"/C/Users/Eesha/Dev/d_project/src",
+		"/C/Users/Eesha/Dev/d_project/src/d_project",
+		"/C/Users/Eesha/Dev/d_project/src/products"
 	],
 	"file_history":
 	[
+		"/C/Users/Eesha/Dev/d_project/src/db.sqlite3",
+		"/C/Users/Eesha/Dev/d_project/src/d_project/settings.py",
 		"/C/Users/Eesha/Desktop/PythonAintShit.py",
 		"/C/Users/Eesha/123.py",
 		"/C/Users/Eesha/AppData/Roaming/Sublime Text 3/Packages/User/Python 3.sublime-build"
@@ -97,8 +120,65 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "src/products/models.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 223,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								223,
+								223
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 34.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/products/admin.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 91,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								91,
+								91
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -183,7 +263,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 201.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
