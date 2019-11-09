@@ -100,25 +100,25 @@ $('a[href*="#"]')
 
     /*Animations on scroll*/
     $('.js--wp-a1').waypoint(function(){
-    $('.js--wp-a1').addClass('animated fadeIn');
+    $('.js--wp-a1').addClass('animated fadeInUp');
         
     },{
         offset:'70%'
     })
         $('.js--wp-a2').waypoint(function(){
-    $('.js--wp-a2').addClass('animated fadeIn');
+    $('.js--wp-a2').addClass('animated fadeInUp');
         
     },{
         offset:'60%'
     })
         $('.js--wp-a3').waypoint(function(){
-    $('.js--wp-a3').addClass('animated fadeIn');
+    $('.js--wp-a3').addClass('animated fadeInUp');
         
     },{
         offset:'60%'
     })
         $('.js--wp-a4').waypoint(function(){
-    $('.js--wp-a4').addClass('animated fadeIn');
+    $('.js--wp-a4').addClass('animated fadeInUp');
         
     },{
         offset:'60%'
