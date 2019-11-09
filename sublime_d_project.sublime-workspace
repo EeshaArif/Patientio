@@ -15,7 +15,7 @@
 			"file": "src/templates/index.html",
 			"settings":
 			{
-				"buffer_size": 33459,
+				"buffer_size": 38982,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -24,7 +24,7 @@
 			"file": "src/static/resources/js/scripts.js",
 			"settings":
 			{
-				"buffer_size": 6939,
+				"buffer_size": 7442,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -33,7 +33,7 @@
 			"file": "src/static/resources/css/style.css",
 			"settings":
 			{
-				"buffer_size": 28006,
+				"buffer_size": 29193,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -93,11 +93,6 @@
 		"/C/Users/Eesha/Dev/d_project/src/pages",
 		"/C/Users/Eesha/Dev/d_project/src/products",
 		"/C/Users/Eesha/Dev/d_project/src/products/migrations",
-		"/C/Users/Eesha/Dev/d_project/src/static",
-		"/C/Users/Eesha/Dev/d_project/src/static/resources",
-		"/C/Users/Eesha/Dev/d_project/src/static/resources/css",
-		"/C/Users/Eesha/Dev/d_project/src/static/resources/css/img",
-		"/C/Users/Eesha/Dev/d_project/src/static/resources/js",
 		"/C/Users/Eesha/Dev/d_project/src/templates"
 	],
 	"file_history":
@@ -121,7 +116,7 @@
 	],
 	"find":
 	{
-		"height": 41.3333333333
+		"height": 29.0
 	},
 	"find_in_files":
 	{
@@ -154,7 +149,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -163,15 +158,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 33459,
+						"buffer_size": 38982,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6234,
-								6234
+								8880,
+								8880
 							]
 						],
 						"settings":
@@ -181,10 +176,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3396.0,
+						"translation.y": 5101.33333333,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -193,15 +188,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6939,
+						"buffer_size": 7442,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6939,
-								6939
+								7442,
+								7442
 							]
 						],
 						"settings":
@@ -211,7 +206,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 5633.33333333,
+						"translation.y": 4142.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -223,15 +218,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 28006,
+						"buffer_size": 29193,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								26421,
-								26421
+								29089,
+								29089
 							]
 						],
 						"settings":
@@ -241,10 +236,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 30618.0,
+						"translation.y": 33692.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]

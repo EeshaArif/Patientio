@@ -540,6 +540,28 @@ header{
     height:110vh;
     background-attachment: fixed;
 }
+.section-facts{
+        background-image:linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.7)),url(img/db_resources/facts2.jpg);
+    text-align: center;
+
+    background-size:cover;
+    background-position: center;
+    height:110vh;
+    color:#fff;
+}
+.section-facts h2{
+    margin-top:5%;
+}
+.section-facts .count{
+    font-size: 300%;
+    margin-bottom: 10%;
+    
+}
+.section-facts .col{
+    margin-top:15%;
+   
+    
+}
 .section-best{
        background-image:linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.3)),url(img/db_resources/healthcare.jpg);
 

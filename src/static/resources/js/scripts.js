@@ -4,8 +4,21 @@
 
 
 $(document).ready(function () {
-    
-      
+    $('.section-facts').waypoint(function(){
+      $('.count').each(function () {
+    $(this).prop('Counter',0).animate({
+        Counter: $(this).text()
+    }, {
+        duration: 10000,
+        easing: 'swing',
+        step: function (now) {
+            $(this).text(Math.ceil(now));
+        }
+    });
+});
+         },{
+        offset:'50%'
+    })
     
     var $navigation = $('nav');
   
@@ -178,7 +191,13 @@ $('a[href*="#"]')
         
     },{
         offset:'50%'
-    })    
+    }) 
+        $('.section-facts div h2').waypoint(function(){
+    $('.section-facts div h2').addClass('animated pulse');
+        
+    },{
+        offset:'50%'
+    }) 
     $('.section-condition div h2').waypoint(function(){
     $('.section-condition div h2').addClass('animated pulse');
         
