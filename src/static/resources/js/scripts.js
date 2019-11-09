@@ -1,6 +1,8 @@
 /*global document, location,window,current,next,prev*/
 /*jslint browser: true*/
 /*global $*/
+
+
 $(document).ready(function () {
     
       
@@ -61,7 +63,7 @@ $(document).ready(function () {
         
     });
     
-    /*NAVIGATION SCROLL */   /*NET SAY UTHAIYA HUA CODE*/
+    /*NAVIGATION SCROLL */   
     
 
     // Select all links with hashes
@@ -70,31 +72,25 @@ $('a[href*="#"]')
   .not('[href="#"]')
   .not('[href="#0"]')
   .click(function(event) {
-    // On-page links
     if (
       location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
       && 
       location.hostname == this.hostname
     ) {
-      // Figure out element to scroll to
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-      // Does a scroll target exist?
       if (target.length) {
-        // Only prevent default if animation is actually gonna happen
         event.preventDefault();
         $('html, body').animate({
           scrollTop: target.offset().top
         }, 1000, function() {
-          // Callback after animation
-          // Must change focus!
           var $target = $(target);
           $target.focus();
-          if ($target.is(":focus")) { // Checking if the target was focused
+          if ($target.is(":focus")) { 
             return false;
           } else {
-            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
-            $target.focus(); // Set focus again
+            $target.attr('tabindex','-1'); 
+            $target.focus(); 
           }
         });
       }
@@ -176,12 +172,7 @@ $('a[href*="#"]')
     },{
         offset:'40%'
     })      
- /*   $('.letterbtn').waypoint(function(){
-    $('.letterbtn').addClass('animated flash');
-        
-    },{
-        offset:'50%'
-    })     */ 
+
     $('.section-testimonials div h2').waypoint(function(){
     $('.section-testimonials div h2').addClass('animated pulse');
         
@@ -212,6 +203,12 @@ $('a[href*="#"]')
     },{
         offset:'50%'
     })  
+    $('.sidebar1').waypoint(function(){
+    $('.sidebar1').addClass('animated zoomInRight');
+        
+    },{
+        offset:'50%'
+    })   
     $('.feedback').waypoint(function(){
     $('.feedback').addClass('animated slideInLeft');
         
@@ -255,6 +252,12 @@ $('a[href*="#"]')
         
     },{
         offset:'50%'
+    })      
+    $('.js--wp-3-2').waypoint(function(){
+        $('.js--wp-3-2').addClass('animated fadeIn');
+        
+    },{
+        offset:'60%'
     })
     
     
@@ -292,38 +295,5 @@ $('a[href*="#"]')
 
         });  
     
-    
-    
-    
-    
-$('.slider span.next').click(function() {
-  $current = $(this).siblings('img.active');
-  $next = $current.next('img');
-  if ($next.length === 0) {
-      $next = $current.prev('img');
-  }
-  if ($next.length != 0) {
-    $current.removeClass('active');
-    $next.addClass('active');
-  }
-    
-
-
-    
-    
-})
-$('.slider span.prev').click(function() {
-  $current = $(this).siblings('img.active');
-  $prev = $current.prev('img');
-  if ($prev.length === 0) {
-      $prev = $current.next('img');
-  }
-    
-  if ($prev.length != 0) {
-    $current.removeClass('active');
-    $prev.addClass('active');
-  }
-  
-})
     
 });
