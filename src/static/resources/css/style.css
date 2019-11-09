@@ -371,7 +371,7 @@ h2::after{
     
     display: block;
     height: 2px;
-    background-color: #49693b;
+    background-color: rgba(124, 186, 190, 0.88);
     content: "";
     width:30%;
     margin:0 auto;
@@ -959,7 +959,7 @@ header{
 }
 .section-testimonials {
 
-    background-image:linear-gradient(rgba(19, 25, 15, 0.94),rgba(0,0,0,0.9)),url(img/info2.jpg);
+    background-image:linear-gradient(rgba(19, 25, 15, 0.9),rgba(0,0,0,0.5)),url(img/db_resources/hospital-doctor.webp);
     background-size: cover;
     color: #fff;
     background-attachment: fixed;
