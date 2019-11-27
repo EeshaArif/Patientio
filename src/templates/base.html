@@ -1,0 +1,163 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Omnifood is a premium food delivery service with the mission to bring affordible and healthy meals to as many people as possible">
+        
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+              rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static 'vendors/css/normalize.css'%}">
+        <link rel="stylesheet" type="text/css" href="{% static 'vendors/css/ionicons.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'resources/css/style.css'%}">
+        <link rel="stylesheet" type="text/css" href="{% static 'resources/css/queries.css'%}">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400&display=swap" rel="stylesheet">
+        <link href="{% static 'vendors/css/animate.css' %}" rel="stylesheet" type="text/css">
+        <title>Patientio</title>
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static '/resources/favicons/apple-touch-icon.png' %}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static '/resources/favicons/favicon-32x32.png' %}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{% static '/resources/favicons/favicon-16x16.png' %}">
+        <link rel="manifest" href="{% static '/resources/favicons/site.webmanifest'%}">
+        <link rel="mask-icon" href="{% static '/resources/favicons/safari-pinned-tab.svg' %}" color="#5bbad5">
+        <link rel="shortcut icon" href="{% static '/resources/favicons/favicon.ico' %}">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="msapplication-config" content="{% static '/resources/favicons/browserconfig.xml' %}">
+        <meta name="theme-color" content="#ffffff">
+        
+    </head>
+    <body>
+        <!--works as a div-->
+       <header>
+            <nav>
+                      <div class="row">
+                  <!--  <img src="{% static 'resources/img/ISSB_logo_main.png' %}" alt="ISSB main logo" class="logo">
+                      <img src="{% static 'resources/img/ISSB_logo_main.png' %}" alt="ISSB main logo" class="logo-format">                  
+                    -->
+                      <ul class="main-nav js--main-nav">
+                        <li>
+                            <a href="#features">Home</a>
+                        </li>
+                          <li>
+                            <a href="ineligibility.html">Appointments</a>
+                        </li>
+                          <li>
+                            <a href="system.html">Departments</a>
+                        </li>
+                 <!--       <li>
+                            <a href="general.html">About us</a>
+                        </li>-->
+                         <li>
+                            <a href="guidlines.html">Contact us</a>
+                        </li>                       
+                          <li>
+                            <a href="aboutus.html">About us</a>
+                        </li>
+                        <li>
+                            <a href="faqs.html">FAQs</a>
+                        </li> 
+                    </ul>
+                    <a class="mobile-nav-icon js--nav-icon"><i class="ion-navicon-round"></i></a>
+                
+                </div>
+            
+            
+            
+            </nav>
+                     <section>
+                        <div class="row">
+            <div class="cd-intro col span-2-of-2">
+            <div class="hero-text-box  cd-intro-content mask-2">
+                <div class="content-wrapper">
+                    <div>
+                    
+                
+                    <h1>Patientio <br></h1>
+                   <p> Your Health Becomes Priority.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tincidunt dictum augue ut aliquet. Nunc id dui turpis. Nam accumsan in dui et dictum.   <br> </p>
+                   
+                   
+                    <div class="action-wrapper">
+                <a class="btn btn-full js--scroll-to-plans letterbtn" href="https://77.75.123.181/issb/query/call-letter.php" target="_blank">learn More </a>
+           
+                 <a class="btn btn-ghost btn2 js--scroll-to-start contactbtn" href="contact.html">Contact</a>  
+                        
+                    </div>
+                    
+            </div>
+                </div>
+            </div>
+                         </div>
+                            
+                    <div class="col span-1-of-2 box sidebar1">          
+                         <h4 >
+                Account Login</h4>
+                           <form  method="post" action="#">
+                                      
+                        
+                            <label for="username"><h5>username</h5></label>
+                        
+                    
+                            <input type="text" name="username" id="username" placeholder="" required>
+                            
+                               <label for="password"><h5>Password</h5></label>
+                               
+                               <input type="text" name="password" id="password" placeholder="" required>                           
+                     
+                   
+                    
+                           
+                        
+                           </form>
+                        
+                                <a class="btn btn-full js--scroll-to-plans letterbtn" href="faqs.html" target="_blank">Log In </a>
+     
+                        
+                
+                </div> 
+                
+                     
+                            
+                            
+                            
+                            
+                            
+                            </div> 
+                </section>
+        </header>
+        
+{% block content %} 
+
+{% endblock %}
+
+
+        
+
+
+
+        <footer>
+            
+            <div class="row">
+                <p>
+                    Copyright &copy; 2019 Patientio Management
+                
+                </p>
+            
+            </div>
+        
+        </footer>
+<script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/Gruntfile.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/Gruntfile.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/Gruntfile.min.js"></script>   
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+<script src="{% static 'vendors/js/jquery.waypoints.min.js' %}"></script>
+<script  src="{% static 'resources/js/scripts.js' %}"></script>         
+        
+    </body>
+</html>
+
+
+
+
