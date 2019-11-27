@@ -30,41 +30,15 @@
     <body>
         <!--works as a div-->
        <header>
-            <nav>
-                      <div class="row">
-                  <!--  <img src="{% static 'resources/img/ISSB_logo_main.png' %}" alt="ISSB main logo" class="logo">
-                      <img src="{% static 'resources/img/ISSB_logo_main.png' %}" alt="ISSB main logo" class="logo-format">                  
-                    -->
-                      <ul class="main-nav js--main-nav">
-                        <li>
-                            <a href="#features">Home</a>
-                        </li>
-                          <li>
-                            <a href="ineligibility.html">Appointments</a>
-                        </li>
-                          <li>
-                            <a href="system.html">Departments</a>
-                        </li>
-                 <!--       <li>
-                            <a href="general.html">About us</a>
-                        </li>-->
-                         <li>
-                            <a href="guidlines.html">Contact us</a>
-                        </li>                       
-                          <li>
-                            <a href="aboutus.html">About us</a>
-                        </li>
-                        <li>
-                            <a href="faqs.html">FAQs</a>
-                        </li> 
-                    </ul>
-                    <a class="mobile-nav-icon js--nav-icon"><i class="ion-navicon-round"></i></a>
-                
-                </div>
-            
-            
-            
-            </nav>
+
+        
+
+{% include "navbar.html" %}
+
+
+                        
+ 
+ 
                      <section>
                         <div class="row">
             <div class="cd-intro col span-2-of-2">
@@ -125,6 +99,11 @@
                             </div> 
                 </section>
         </header>
+               <section class= "section-declare js--section-declare">
+            
+            
+            
+            </section>
         
 {% block content %} 
 
