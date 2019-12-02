@@ -159,7 +159,7 @@ def from_current_timezone(value):
             return timezone.make_aware(value, current_timezone)
         except Exception as exc:
             raise ValidationError(
-                _('%(datetime)s couldn\'t be interpreted '
+                _('%(datetime)s couldn’t be interpreted '
                   'in time zone %(current_timezone)s; it '
                   'may be ambiguous or it may not exist.'),
                 code='ambiguous_timezone',
@@ -174,6 +174,5 @@ def to_current_timezone(value):
     to naive datetimes in the current time zone for display.
     """
     if settings.USE_TZ and value is not None and timezone.is_aware(value):
-        current_timezone = timezone.get_current_timezone()
-        return timezone.make_naive(value, current_timezone)
+        return timezone.make_naive(value)
     return value

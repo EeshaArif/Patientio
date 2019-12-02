@@ -1,5 +1,7 @@
-from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from .models import About,Appointment,Doctor,Report,Patient,Service
+from django.http import HttpResponse,HttpResponseRedirect
+from django.shortcuts import redirect
 
 def home_view(request,*args, **kwargs):
 	#return HttpResponse("<h1>hello world</h1>")
@@ -31,7 +33,7 @@ def aboutus_view(request,*args, **kwargs):
 
 def about(request):
     context = {
-    'about': About.objects.get(pk = 1)
+    #'about': About.objects.get(pk = 1)
     }
     return render(request, "about.html", context)
 

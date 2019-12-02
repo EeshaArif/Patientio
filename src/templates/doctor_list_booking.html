@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Doctors List</title>
+  </head>
+  <body>
+    <div class="">
+    <ul>
+      <li><a href="{% url 'home' %}">Home</a></li>
+      <li><a href="{% url 'about_us' %}">About Us</a></li>
+      <li><a href="{% url 'appointments_list' %}">Appointments</a></li>
+      <li><a href="{% url 'lab_reports' %}">Lab Reports</a></li>
+      <li><a href="{% url 'doctor_list' %}">Doctors</a></li>
+      <li><a href="{% url 'patient_info' %}">My Profile</a></li>
+      <li><a href="{% url 'services' %}">Services</a></li>
+    </ul>
+  </div>
+<!-- doc info -->
+{% for doctor in doctors %}
+<div class="">
+  <img src="img.jpg" alt="Doctor Image" style="width:100%">
+  <h1>{{doctor.person.first_name}} {{doctor.person.last_name}}</h1>
+  <p class="">Designation</p>
+  <p class="">{{doctor.designation}}</p>
+<p>Degree</p>
+<p>{{doctor.degree}}</p>
+<p>Experience</p>
+<p>{{doctor.experience}}</p>
+  <a href="#"><i class=""></i>{{doctor.person.email}}</a>
+  <a href="#"><i class=""></i>{{doctor.person.phone}}</a>
+  <p><a href="{% url 'doctor_info' doctor.id %}">Book Now</a></p>
+
+</div>
+{% endfor %}
+  </body>
+</html>

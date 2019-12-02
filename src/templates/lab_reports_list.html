@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="">
+    <ul>
+      <li><a href="{% url 'home' %}">Home</a></li>
+      <li><a href="{% url 'about_us' %}">About Us</a></li>
+      <li><a href="{% url 'appointments_list' %}">Appointments</a></li>
+      <li><a href="{% url 'lab_reports' %}">Lab Reports</a></li>
+      <li><a href="{% url 'doctor_list' %}">Doctors</a></li>
+      <li><a href="{% url 'patient_info' %}">My Profile</a></li>
+      <li><a href="{% url 'services' %}">Services</a></li>
+    </ul>
+  </div>
+    {% for report in reports %}
+<!-- doc info -->
+<div class="">
+  <p class="">{{report.id}}</p>
+<div class="">
+<p>{{report.test_name}}</p>
+<p>{{report.date}}</p>
+<p>{{report.investigations}}</p>
+<p>{{report.result_summary}}</p>
+<a href="{% url 'report_detail' report.id %}">Read More</a>
+</div>
+
+<form action="{% url 'lab_report_delete' report.id %}" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Delete">
+</form>
+</div>
+{% endfor %}
+  </body>
+</html>

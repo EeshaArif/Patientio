@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Doctor Detail</title>
+</head>
+<body>
+  <div>
+    <div class="">
+      <img src="" alt="Doctor">
+      <h4>General Info</h4>
+    </div>
+    <div class="">
+      <h4>{{doctor.designation}}</h4>
+      <h4>{{doctor.person.first_name}} {{doctor.person.last_name}}</h4>
+      <h4>Address</h4>
+      <h4>{{doctor.person.address}}</h4>
+      <h4>Phone</h4>
+      <h4>{{doctor.person.phone}}</h4>
+      <h4>Email</h4>
+      <h4>{{doctor.person.email}}</h4>
+    </div>
+    <div class="">
+      <h4>Professional Statement</h4>
+      <h4>Statement Summary</h4>
+      <h4>{{doctor.professional_statement_text}}</h4>
+      <h4>Specializations</h4>
+      {% for item in doctor.specialization.all %}
+      <ul>
+        <li>{{item.specialization}}</li>
+      </ul>
+      {% endfor %}
+    </div>
+    <div class="">
+      <h4>Education</h4>
+      <h4>Education Summary</h4>
+      <h4>{{doctor.education}}</h4>
+      <h4>Curriculum</h4>
+{% for item in doctor.curriculum.all %}
+      <ul>
+        <li>{{item.major_subject}}</li>
+      </ul>
+      {% endfor %}
+    </div>
+    <div class="">
+      <h4>Prices and Payments</h4>
+      <h4>Payment Summary</h4>
+      <h4>{{doctor.payment_statement}}</h4>
+      <table style="width:100%">
+        <tr>
+          <th>Service-Visit</th>
+          <th>Price</th>
+        </tr>
+        {% for item in doctor.price.all %}
+        <tr>
+          <td>{{item.disease_name}}</td>
+          <td>{{item.price}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </div>
+  <div>
+    <div class="">
+      <div class="">
+        <h4>Book a Visit</h4>
+        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+        <h4>{{doctor.start_duty_day}} to {{doctor.end_duty_day}} {{doctor.start_time}} am to {{doctor.end_time}} pm</h4>
+      </div>
+      <div class="">
+          <form class="" action="{% url 'booking' doctor.id %}" method="post">
+            {% csrf_token %}
+        <input type="date" name="Appointment Date">
+        <input type="time" name="Appointment Time">
+      </div>
+      <div class="">
+          <table>
+            {% for item in doctor.price.all %}
+            <tr>
+              <td><input type="checkbox" name="disease" value="{{item.disease_name}}"></td>
+              <td>{{item.disease_name}}</td>
+              <td>{{item.price}}</td>
+            </tr>
+            {% endfor %}
+          </table>
+          <div class="">
+            <input type="submit" name="Book Now" value="Book Now">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -2,7 +2,9 @@ import functools
 import os
 import pkgutil
 import sys
-from collections import OrderedDict, defaultdict
+from argparse import _SubParsersAction
+from collections import defaultdict
+from difflib import get_close_matches
 from importlib import import_module
 
 import django
@@ -14,7 +16,6 @@ from django.core.management.base import (
 )
 from django.core.management.color import color_style
 from django.utils import autoreload
-from django.utils.encoding import force_text
 
 
 def find_commands(management_dir):
@@ -117,11 +118,37 @@ def call_command(command_name, *args, **options):
         for s_opt in parser._actions if s_opt.option_strings
     }
     arg_options = {opt_mapping.get(key, key): value for key, value in options.items()}
-    defaults = parser.parse_args(args=[force_text(a) for a in args])
+    parse_args = [str(a) for a in args]
+
+    def get_actions(parser):
+        # Parser actions and actions from sub-parser choices.
+        for opt in parser._actions:
+            if isinstance(opt, _SubParsersAction):
+                for sub_opt in opt.choices.values():
+                    yield from get_actions(sub_opt)
+            else:
+                yield opt
+
+    parser_actions = list(get_actions(parser))
+    mutually_exclusive_required_options = {
+        opt
+        for group in parser._mutually_exclusive_groups
+        for opt in group._group_actions if group.required
+    }
+    # Any required arguments which are passed in via **options must be passed
+    # to parse_args().
+    parse_args += [
+        '{}={}'.format(min(opt.option_strings), arg_options[opt.dest])
+        for opt in parser_actions if (
+            opt.dest in options and
+            (opt.required or opt in mutually_exclusive_required_options)
+        )
+    ]
+    defaults = parser.parse_args(args=parse_args)
     defaults = dict(defaults._get_kwargs(), **arg_options)
     # Raise an error if any unknown options were passed.
     stealth_options = set(command.base_stealth_options + command.stealth_options)
-    dest_parameters = {action.dest for action in parser._actions}
+    dest_parameters = {action.dest for action in parser_actions}
     valid_options = (dest_parameters | stealth_options).union(opt_mapping)
     unknown_options = set(options) - valid_options
     if unknown_options:
@@ -204,10 +231,11 @@ class ManagementUtility:
                 settings.INSTALLED_APPS
             else:
                 sys.stderr.write("No Django settings specified.\n")
-            sys.stderr.write(
-                "Unknown command: %r\nType '%s help' for usage.\n"
-                % (subcommand, self.prog_name)
-            )
+            possible_matches = get_close_matches(subcommand, commands)
+            sys.stderr.write('Unknown command: %r' % subcommand)
+            if possible_matches:
+                sys.stderr.write('. Did you mean %s?' % possible_matches[0])
+            sys.stderr.write("\nType '%s help' for usage.\n" % self.prog_name)
             sys.exit(1)
         if isinstance(app_name, BaseCommand):
             # If the command is already loaded, use it directly.
@@ -249,7 +277,7 @@ class ManagementUtility:
         except IndexError:
             curr = ''
 
-        subcommands = list(get_commands()) + ['help']
+        subcommands = [*get_commands(), 'help']
         options = [('--help', False)]
 
         # subcommand
@@ -303,7 +331,7 @@ class ManagementUtility:
         # Preprocess options to extract --settings and --pythonpath.
         # These options could affect the commands that are available, so they
         # must be processed early.
-        parser = CommandParser(None, usage="%(prog)s subcommand [options] [args]", add_help=False)
+        parser = CommandParser(usage='%(prog)s subcommand [options] [args]', add_help=False, allow_abbrev=False)
         parser.add_argument('--settings')
         parser.add_argument('--pythonpath')
         parser.add_argument('args', nargs='*')  # catch-all
@@ -317,6 +345,8 @@ class ManagementUtility:
             settings.INSTALLED_APPS
         except ImproperlyConfigured as exc:
             self.settings_exception = exc
+        except ImportError as exc:
+            self.settings_exception = exc
 
         if settings.configured:
             # Start the auto-reloading dev server even if the code is broken.
@@ -329,8 +359,8 @@ class ManagementUtility:
                     # The exception will be raised later in the child process
                     # started by the autoreloader. Pretend it didn't happen by
                     # loading an empty list of applications.
-                    apps.all_models = defaultdict(OrderedDict)
-                    apps.app_configs = OrderedDict()
+                    apps.all_models = defaultdict(dict)
+                    apps.app_configs = {}
                     apps.apps_ready = apps.models_ready = apps.ready = True
 
                     # Remove options not compatible with the built-in runserver
@@ -351,7 +381,7 @@ class ManagementUtility:
         if subcommand == 'help':
             if '--commands' in args:
                 sys.stdout.write(self.main_help_text(commands_only=True) + '\n')
-            elif len(options.args) < 1:
+            elif not options.args:
                 sys.stdout.write(self.main_help_text() + '\n')
             else:
                 self.fetch_command(options.args[0]).print_help(self.prog_name, options.args[0])
