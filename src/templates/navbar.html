@@ -3,26 +3,26 @@
             
                       <ul class="main-nav js--main-nav">
                         <li>
-                            <a href="#features">Home</a>
+                            <a href="{% url 'home' %}">Home</a>
                         </li>
                           <li>
-                            <a href="ineligibility.html">Appointments</a>
+                            <a href="{% url 'appointments' %}">Appointments</a>
                         </li>
                              <li>
-                            <a href="doctors.html">Doctors</a>
+                            <a href="{% url 'findDoctor' %}">Doctors</a>
                         </li> 
                           <li>
-                            <a href="system.html">Departments</a>
+                            <a href="{% url 'departments' %}">Departments</a>
                         </li>
 
                  <!--       <li>
                             <a href="general.html">About us</a>
                         </li>-->
                          <li>
-                            <a href="guidlines.html">Contact us</a>
+                            <a href="{% url 'contactus' %}">Contact us</a>
                         </li>                       
                           <li>
-                            <a href="aboutus.html">About us</a>
+                            <a href="{% url 'aboutus' %}">About us</a>
                         </li>
                    
 

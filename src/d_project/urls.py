@@ -16,12 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from pages.views import home_view,doctor_view,schedule_check_view
+from pages.views import home_view,doctor_view,schedule_check_view,appointment_view,departments_view,contactus_view,aboutus_view
 #from pages.views import home_view, contact_view, about_view, social_view
 
 urlpatterns = [
     path('', home_view, name='home'),
-    path('findDoctor/',doctor_view),
+    path('findDoctor/',doctor_view, name='findDoctor'),
+    path('appointments/',appointment_view, name='appointments'),
+    path('departments/',departments_view, name='departments'),
+    path('contactus/',contactus_view, name='contactus'),
+    path('aboutus/',aboutus_view, name='aboutus'),
     path('schedule/',schedule_check_view),
   #  path('contact/',contact_view),
    # path('about/',about_view),
