@@ -548,8 +548,22 @@ header{
     background-position: center;
     height:110vh;
 }
+.section-doctor .box{
+    max-width: 30%;
+
+}
+.section-doctor {
+        margin: 0 auto;
+            max-width: 1140px;
+
+
+     padding: 80px 60px;
+}
+
+
+
 .section-facts{
-        background-image:linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.7)),url(img/db_resources/facts2.jpg);
+    background-image:linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.7)),url(img/db_resources/facts2.jpg);
     text-align: center;
 
     background-size:cover;
