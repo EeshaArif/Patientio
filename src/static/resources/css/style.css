@@ -571,7 +571,8 @@ header{
         width: 100%;
         margin-left:70px;
         margin-right:-80px;
-        border-top: 250px solid  rgb(179, 211, 73);
+        border-top: 250px solid rgb(44, 110, 175, 0.8)/*light green rgba(124, 186, 190, 0.88)/
+        *dark green #3b6969/*green rgb(179, 211, 73)*/;
         border-left: 100px solid transparent;
         margin-bottom: 15px;
     }
@@ -582,7 +583,7 @@ header{
         width: 100%;
         height: auto;
         
-        border-bottom: 400px solid rgb(179, 211, 73);
+        border-bottom: 400px solid rgb(44, 110, 175, 0.8);
         border-left: 100px solid transparent;
     }
 .section-dept .box{
@@ -590,15 +591,26 @@ header{
     margin-bottom: -50%;
 }
 .section-dept h2{
-
+     margin-top:-25%;
    /* margin-bottom:-20%;
     padding-top: 10%;*/
 }
+.section-dept h2::after{
+    
+    display: block;
+    height: 2px;
+    background-color: #fff;
+    content: "";
+    width:30%;
+    margin:0 auto;
+    margin-top: 30px;
+    }
 .section-dept p{
-   /* margin-top: 50%;
-    margin-bottom: -50%;*/
+   
+    margin-bottom: -50%;
 }
 .section-dept{
+    padding-top: 55%;
     color:#fff;
     padding-right: 0px; 
     background-color: #fff;
