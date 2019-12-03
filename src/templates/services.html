@@ -1,22 +1,37 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Our Services</title>
-  </head>
-  <body>
-    <div class="">
-    <ul>
-      <li><a href="{% url 'home' %}">Home</a></li>
-      <li><a href="{% url 'about_us' %}">About Us</a></li>
-      <li><a href="{% url 'appointments_list' %}">Appointments</a></li>
-      <li><a href="{% url 'lab_reports' %}">Lab Reports</a></li>
-      <li><a href="{% url 'doctor_list' %}">Doctors</a></li>
-      <li><a href="{% url 'patient_info' %}">My Profile</a></li>
-      <li><a href="{% url 'services' %}">Services</a></li>
-    </ul>
-  </div>
-<!-- blog card -->
+{% extends "base.html" %}
+{% load static %}
+ {% block content %}
+       <header class="header-doc">
+              
+                                      {% include 'navbar.html' %}
+              
+                        <div class="row main-row">
+            <div class="cd-intro col span-2-of-2">
+            <div class="hero-text-box  cd-intro-content mask-2">
+                <div class="content-wrapper">
+                    <div>
+                    
+                
+                    <h1>Our Departments ready to serve  <br></h1>
+                   <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tincidunt dictum  <br> </p>
+                   
+                   
+                    <div class="action-wrapper">
+                <a class="btn btn-full js--scroll-to-plans letterbtn" href="{% url 'about_us' %}" target="_blank">Learn More </a>
+           
+                 <a class="btn btn-ghost btn2 js--scroll-to-start contactbtn" href="{% url 'contactus' %}">Contact</a>  
+                        
+                    </div>
+                    
+                   </div>
+              </div>
+            </div>
+            </div>    
+                       </div> 
+              
+              
+        </header>
+
 {% for service in service %}
 <div class="">
 <div class="">
@@ -36,5 +51,6 @@
 </div>
 </div>
 {% endfor %}
-  </body>
-</html>
+
+
+{% endblock %}

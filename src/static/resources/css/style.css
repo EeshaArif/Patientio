@@ -541,12 +541,15 @@ header{
     background-attachment: fixed;
 }
 .header-doc{
-    background-image:linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.9)),url(img/db_resources/physicians-reporting.jpg);
+    background-image:linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.9)),url(img/header_doctor_2.jpg);
 
 
     background-size:cover;
     background-position: center;
     height:110vh;
+}
+.header-doc .main-row{
+    padding-top: 5%;
 }
 .section-doctor .box{
     max-width: 30%;
