@@ -540,6 +540,14 @@ header{
     height:110vh;
     background-attachment: fixed;
 }
+.header-doc{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.9)),url(img/db_resources/physicians-reporting.jpg);
+
+
+    background-size:cover;
+    background-position: center;
+    height:110vh;
+}
 .section-facts{
         background-image:linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.7)),url(img/db_resources/facts2.jpg);
     text-align: center;

@@ -1,12 +1,64 @@
+{% extends "base.html" %}
+{% load static %}
+            {% block content %} 
+        <header>
+              
+                                      {% include 'navbar.html' %}
+              
+                        <div class="row">
+            <div class="cd-intro col span-2-of-2">
+            <div class="hero-text-box  cd-intro-content mask-2">
+                <div class="content-wrapper">
+                    <div>
+                    
+                
+                    <h1>We help you to find the best doctor around you  <br></h1>
+                   <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tincidunt dictum  <br> </p>
+                   
+                   
+                    <div class="action-wrapper">
+                <a class="btn btn-full js--scroll-to-plans letterbtn" href="{% url 'about_us' %}" target="_blank">Learn More </a>
+           
+                 <a class="btn btn-ghost btn2 js--scroll-to-start contactbtn" href="{% url 'contactus' %}">Contact</a>  
+                        
+                    </div>
+                    
+            </div>
+                </div>
+            </div>
+                         </div>
+                
+                
+                     
+                            
+                            
+                            
+                            
+                            
+                            </div> 
+              
+              
+        </header>
+               <section class= "section-declare js--section-declare">
+            
+            
+            
+            </section>
 
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Doctors List</title>
-  </head>
-  <body>
-    <div class="">
+
+                        
+ 
+ 
+
+
+
+
+
+
+
+<section>
+
+  <!--    <div class="">
     <ul>
       <li><a href="{% url 'home' %}">Home</a></li>
       <li><a href="{% url 'about_us' %}">About Us</a></li>
@@ -17,7 +69,9 @@
       <li><a href="{% url 'services' %}">Services</a></li>
     </ul>
   </div>
-<!-- doc info -->
+-->
+
+
 {% for doctor in doctors %}
 <div class="">
   <img src="img.jpg" alt="Doctor Image" style="width:100%">
@@ -34,5 +88,9 @@
 
 </div>
 {% endfor %}
-  </body>
-</html>
+
+</section>
+
+{% endblock %}
+
+   
