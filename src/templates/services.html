@@ -85,13 +85,13 @@
    {% for service in service %}      
         <section class="section-dept">
          
-          <div class="cornered box"> 
+          <div class="row cornered box"> 
            
                 
                     <div class="row">
                     <h2> {{service.service_title}}</h2>
                   </div>
-                  <div class="row">
+                  <div class="row rowb">
                     <br><br>
                     <p class="long-copy">{{service.text}}<br><br>
                     {{service.service_summary}}</p>
@@ -101,7 +101,7 @@
 
           </div>
 
-          <div class="cornered2">
+          <div class="row cornered2">
             
                              <div class="row rowa">
                   <a href="{% url 'service_detail' service.id %}">Read More</a>

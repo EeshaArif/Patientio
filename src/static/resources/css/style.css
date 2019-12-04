@@ -568,6 +568,7 @@ header{
     margin-right: -150px;
 }
 .cornered2 {
+
         width: 100%;
         margin-left:70px;
         margin-right:-80px;
@@ -575,17 +576,20 @@ header{
         *dark green #3b6969/*green rgb(179, 211, 73)*/;
         border-left: 100px solid transparent;
         margin-bottom: 15px;
+        margin-top:-5%;
+
     }
 .cornered {
     margin-left:70px;
-       margin-top:-80px;
+       margin-top:-200px;
         padding-right: 2%;
         width: 100%;
         height: auto;
         
         border-bottom: 400px solid rgb(44, 110, 175, 0.8);
-        border-left: 100px solid transparent;
+        border-left: 80px solid transparent;
     }
+
 .section-dept .box{
     margin-top: 20%;
     margin-bottom: -50%;
@@ -620,9 +624,17 @@ header{
 .rowa{
     margin-bottom: -4%;
     padding-left: 44%;
-    padding-top: 4%;
+    margin-top:2%;
+   /* padding-top: 4%;*/
 
 
+}
+.cornered .row{
+    margin-top:-5%;
+    ;
+}
+.cornered .rowb{
+    margin-left:-13%
 }
 .section-dept a:hover,
 .section-dept a:active{
