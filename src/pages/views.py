@@ -48,6 +48,11 @@ def doctor_list(request):
     'doctors': Doctor.objects.all()
     }
     return render(request, "doctor_list_booking.html", context)
+    ######### USELESS CODE ##################
+def doctor_list_booking(request):
+    img = Person.objects.filter(file_type='image')
+    return render(request,'doctor_list_booking.html',{"img":img, 'media_url':settings.MEDIA_URL})
+    ###########################################
 
 def lab_reports(request):
     context = {

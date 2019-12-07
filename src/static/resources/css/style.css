@@ -595,7 +595,9 @@ header{
     margin-bottom: -50%;
 }
 .section-dept h2{
-     margin-top:-25%;
+     margin-bottom: -2%;
+    margin-right: -25%;
+    margin-top: 2%;
    /* margin-bottom:-20%;
     padding-top: 10%;*/
 }
@@ -605,11 +607,12 @@ header{
     height: 2px;
     background-color: #fff;
     content: "";
-    width:30%;
+    width:15%;
     margin:0 auto;
     margin-top: 30px;
     }
 .section-dept p{
+    font-weight: 300;
    
     margin-bottom: -50%;
 }
@@ -644,7 +647,8 @@ header{
 }
 
 .section-dept{
-    padding-top: 55%;
+    overflow: hidden;
+    padding-top: 50%;
     color:#fff;
     padding-right: 0px; 
     background-color: #fff;
@@ -1422,8 +1426,42 @@ footer p{
                   /*Animations */
 /*-----------------------------------------------*/
 
+.js--wp-6-2,.js--wp-6-1,
+.js--wp-6-3,
+.js--wp-6-4,
+.js--wp-6-5,
+.js--wp-6-7,.js--wp-6-6,
+.js--wp-6-8,
+.js--wp-6-9,
+.js--wp-6-10
+{
+
+    opacity: 0;
+     animation-duration: 10s;
+}
+
+.js--wp-6-2.animated,
+.js--wp-6-1.animated,
+.js--wp-6-3.animated,
+.js--wp-6-4.animated,
+.js--wp-6-5.animated,
+.js--wp-6-6.animated,
+.js--wp-6-7.animated,
+.js--wp-6-8.animated,
+.js--wp-6-9.animated,
+.js--wp-6-10.animated{
+    animation-delay: 0.3s;
+    opacity: 1;
+}
+
+.js--wp-2-6,
+.js--wp-2-7,
+.js--wp-2-8,
+.js--wp-2-9,
+.js--wp-2-10,
+.js--wp-2-1,.js--wp-2-2,.js--wp-2-3,.js--wp-2-4,.js--wp-2-5,
 .js--wp-1,.js--wp-2,.js--wp-1-2,.js--wp-3,.js--wp-3-2,
-.js--wp-a1,.js--wp-a2,.js--wp-a3,.js--wp-a4
+.js--wp-a1,.js--wp-a2,.js--wp-a3,.js--wp-a4,.js--wp-51
 {
     opacity: 0;
     -webkit-animation-duration: 1s;
@@ -1454,6 +1492,17 @@ footer p{
      animation-duration: 1s;
     
 }
+.js--wp-2-1.animated,
+.js--wp-2-2.animated,
+.js--wp-2-3.animated,
+.js--wp-2-4.animated,
+.js--wp-2-5.animated,
+.js--wp-2-6.animated,
+.js--wp-2-7.animated,
+.js--wp-2-8.animated,
+.js--wp-2-9.animated,
+.js--wp-2-10.animated,
+.js--wp-51.animated,
 .js--wp-1.animated,
 .js--wp-1-2.animated,
 .js--wp-2.animated,

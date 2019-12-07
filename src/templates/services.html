@@ -84,13 +84,15 @@
         </section>
    {% for service in service %}      
         <section class="section-dept">
-         
+                   <div class="row js--wp-2-{{forloop.counter}}">
+
+                    <h2> {{service.service_title}}</h2>
+                  </div>
+         <div class="js--wp-6-{{forloop.counter}}">
           <div class="row cornered box"> 
            
                 
-                    <div class="row">
-                    <h2> {{service.service_title}}</h2>
-                  </div>
+           
                   <div class="row rowb">
                     <br><br>
                     <p class="long-copy">{{service.text}}<br><br>
@@ -110,10 +112,11 @@
                 
           </div>
 
-
+</div>
 
 
 </section>
+
 {% endfor %}
 {% endblock %}
 <!--
