@@ -7,7 +7,7 @@
 <body>
   <div>
     <div class="">
-      <img src="" alt="Doctor">
+      <img src="{{ doctor.image.url}}" alt="{{doctor.first_name}} {{doctor.last_name}}">
       <h4>General Info</h4>
     </div>
     <div class="">
@@ -60,7 +60,6 @@
       </table>
     </div>
   </div>
-  <div>
     <div class="">
       <div class="">
         <h4>Book a Visit</h4>
@@ -74,21 +73,14 @@
         <input type="time" name="Appointment Time">
       </div>
       <div class="">
-          <table>
-            {% for item in doctor.price.all %}
-            <tr>
-              <td><input type="checkbox" name="disease" value="{{item.disease_name}}"></td>
-              <td>{{item.disease_name}}</td>
-              <td>{{item.price}}</td>
-            </tr>
-            {% endfor %}
-          </table>
+        Disease:
+          <input type="text" name="issue" value="Disease Name">
           <div class="">
             <input type="submit" name="Book Now" value="Book Now">
           </div>
+
         </form>
       </div>
     </div>
-  </div>
 </body>
 </html>

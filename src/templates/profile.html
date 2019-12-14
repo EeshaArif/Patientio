@@ -1,0 +1,81 @@
+
+{% extends "base_.html" %}
+{% load static %}
+            {% block content %}
+  <div class="">
+  <ul>
+    <li><a href="{% url 'home' %}">My Profile</a></li>
+    <li><a href="{% url 'about_us' %}">About Us</a></li>
+    <li><a href="{% url 'appointments_list' %}">Appointments</a></li>
+    <li><a href="{% url 'lab_reports' %}">Lab Reports</a></li>
+    <li><a href="{% url 'doctor_list' %}">Doctors</a></li>
+    <li><a href="{% url 'services' %}">Services</a></li>
+    <li><a href="{% url 'account_logout' %}">Logout</a></li>
+  </ul>
+</div>
+{% if message %}
+{{message}}
+{% endif %}
+{% for patient in history %}
+  <img src="{{ patient.image.url}}" alt="{{ patient.first_name }} {{patient.last_name}}">
+  <br>
+  <h4>First Name</h4>
+  <h4>{{patient.first_name}}</h4>
+  <br>
+  <h4>Last Name</h4>
+  <h4>{{patient.last_name}}</h4>
+  <br>
+  <h4>Age</h4>
+  <h4>{{patient.age}}</h4>
+  <br>
+  <h4>Gender</h4>
+  <h4>{{patient.sex}}</h4>
+  <br>
+  <h4>Email</h4>
+  <h4>{{patient.email}}</h4>
+  <br>
+  <h4>Addres</h4>
+  <h4>{{patient.address}}</h4>
+  <br>
+  <h4>Phone</h4>
+  <h4>{{patient.phone}}</h4>
+  <br>
+  <h4>Occupation</h4>
+  <h4>{{patient.occupation}}</h4>
+  <br>
+  <h4>Presenting Complaint</h4>
+  <h4>{{patient.presenting_complaint}}</h4>
+  <br>
+  <h4>Detail</h4>
+  <h4>{{patient.presenting_complaint_detail}}</h4>
+  <br>
+  <h4>Past Medical History</h4>
+  <h4>{{patient.past_medical_history}}</h4>
+  <br>
+  <h4>Past Surgical History</h4>
+  <h4>{{patient.past_surgical_history}}</h4>
+  <br>
+  <h4>Past Drug History</h4>
+  <h4>{{patient.past_drug_history}}</h4>
+  <br>
+  <h4>Drug Allergy</h4>
+  <h4>{{patient.drug_allergy}}</h4>
+  <br>
+  <h4>Vaccination History</h4>
+  <h4>{{patient.vaccination_history}}</h4>
+  <br>
+  <h4>Personal History</h4>
+  <h4>{{patient.personal_history}}</h4>
+  <br>
+  <h4>Economic Status</h4>
+  <h4>{{patient.economic_status}}</h4>
+  <br>
+  {% endfor %}
+
+
+
+
+
+
+
+   {% endblock %}

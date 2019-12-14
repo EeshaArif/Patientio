@@ -6,16 +6,19 @@
   </head>
   <body>
     <div class="">
-    <ul>
-      <li><a href="{% url 'home' %}">Home</a></li>
-      <li><a href="{% url 'about_us' %}">About Us</a></li>
-      <li><a href="{% url 'appointments_list' %}">Appointments</a></li>
-      <li><a href="{% url 'lab_reports' %}">Lab Reports</a></li>
-      <li><a href="{% url 'doctor_list' %}">Doctors</a></li>
-      <li><a href="{% url 'patient_info' %}">My Profile</a></li>
-      <li><a href="{% url 'services' %}">Services</a></li>
-    </ul>
+      <ul>
+        <li><a href="{% url 'home' %}">My Profile</a></li>
+        <li><a href="{% url 'about_us' %}">About Us</a></li>
+        <li><a href="{% url 'appointments_list' %}">Appointments</a></li>
+        <li><a href="{% url 'lab_reports' %}">Lab Reports</a></li>
+        <li><a href="{% url 'doctor_list' %}">Doctors</a></li>
+        <li><a href="{% url 'services' %}">Services</a></li>
+        <li><a href="{% url 'account_logout' %}">Logout</a></li>
+      </ul>
   </div>
+  {% if message %}
+  {{message}}
+  {% endif %}
     {% for report in reports %}
 <!-- doc info -->
 <div class="">

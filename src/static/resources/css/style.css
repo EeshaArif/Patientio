@@ -549,6 +549,10 @@ input[type=submit]:hover
     color: #fff;
 }
 
+.btnlogin{
+     margin-left:15%;
+}
+
 /*-----------------------------------------------*/
                   /* HEADER */
 /*-----------------------------------------------*/
@@ -1617,7 +1621,8 @@ footer p{
   
     text-align: center;
  
-  margin-left: -8%;
+  margin-right: -20%;
+  padding-left: 20%;
 }
 .cd-intro1 {
   position: relative;
@@ -1634,6 +1639,8 @@ footer p{
   display:table-cell;
   vertical-align: middle;
   /*text-align:center;*/
+  margin-left:25%;
+  margin-top:10%;
     
     
     

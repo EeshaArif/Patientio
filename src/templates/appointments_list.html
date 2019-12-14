@@ -6,27 +6,28 @@
   </head>
   <body>
     <div class="">
-    <ul>
-      <li><a href="{% url 'home' %}">Home</a></li>
-      <li><a href="{% url 'about_us' %}">About Us</a></li>
-      <li><a href="{% url 'appointments_list' %}">Appointments</a></li>
-      <li><a href="{% url 'lab_reports' %}">Lab Reports</a></li>
-      <li><a href="{% url 'doctor_list' %}">Doctors</a></li>
-      <li><a href="{% url 'patient_info' %}">My Profile</a></li>
-      <li><a href="{% url 'services' %}">Services</a></li>
-    </ul>
+      <ul>
+        <li><a href="{% url 'home' %}">My Profile</a></li>
+        <li><a href="{% url 'about_us' %}">About Us</a></li>
+        <li><a href="{% url 'appointments_list' %}">Appointments</a></li>
+        <li><a href="{% url 'lab_reports' %}">Lab Reports</a></li>
+        <li><a href="{% url 'doctor_list' %}">Doctors</a></li>
+        <li><a href="{% url 'services' %}">Services</a></li>
+        <li><a href="{% url 'account_logout' %}">Logout</a></li>
+      </ul>
   </div>
 <!-- doc info -->
+{% if message %}
+{{message}}
+{% endif %}
 {% for appointment in appointments %}
 <div class="">
   <p class="">Appointment number {{appointment.id}}</p>
-  <p class="">Patient Name {{appointment.patient.person.first_name}} {{appointment.patient.person.first_name}}</p>
-<div class="">
-<p>{{appointment.doctor.person.first_name}} {{appointment.doctor.person.last_name}}</p>
+  <div class="">
+
 <p>{{appointment.date}}</p>
 <p>{{appointment.time}}</p>
-<p>{{appointment.doctor.payment_statement.disease_name}}</p>
-<p>{{appointment.doctor.payment_statement.price}}</p>
+<p>{{appointment.disease_option}}</p>
 </div>
 
 <div class="">

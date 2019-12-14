@@ -71,7 +71,7 @@ def single_doctor(request,doctor_id):
     return render(request, "single_doctor_booking.html", {'doctor': doctor})
 
 @login_required
-def home2(request):
+def profile(request):
     history = History.objects.filter(user = request.user)
     if history:
         return render(request, "profile.html", {'history': history})
