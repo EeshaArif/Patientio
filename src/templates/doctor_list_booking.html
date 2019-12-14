@@ -71,7 +71,7 @@
   </div>
 -->
        <section class="section-doctor">
-            <div class="row">
+            <div class="row js--wp-4">
                 <h2>Our Amazing Doctors</h2>
             
             </div>
@@ -80,10 +80,12 @@
             <div class="row"></div>
 {% for doctor in doctors %}
              
-                <div class="col span-1-of-3 box">
+                <div class="col span-1-of-3 box doctor plan-box js--wp-1-2-0">
+             <!-- feedback{{forloop.counter0}}">-->
                     <!--<img src="{{media_url}}{{ forloop.counter.image }}" alt="lisbon">-->
-                    
+                    <figure class="photo">
                     <img src="{{ doctor.image.url }}" alt="{{ doctor.first_name }} {{doctor.last_name}}">
+                  </figure>
                     <h3>{{doctor.first_name}} {{doctor.last_name}}</h3>
                     <div class="city-feature">
                           <i class="ion-ios-person icon-small"></i>

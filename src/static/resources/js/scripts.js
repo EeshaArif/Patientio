@@ -142,6 +142,12 @@ $('a[href*="#"]')
     },{
         offset:'80%'
     })
+     $('.js--flip-1').waypoint(function(){
+    $('.js--flip-1').addClass('animated flipInY');
+        
+    },{
+        offset:'60%'
+    })    
     $('.js--wp-b1').waypoint(function(){
     $('.js--wp-b1').addClass('animated fadeIn');
         
@@ -228,12 +234,42 @@ $('a[href*="#"]')
     },{
         offset:'50%'
     })   
-    $('.feedback').waypoint(function(){
-    $('.feedback').addClass('animated slideInLeft');
+    $('.feedback0').waypoint(function(){
+    $('.feedback0').addClass('animated slideInLeft');
         
     },{
-        offset:'50%'
+        offset:'40%'
     })    
+        $('.feedback1').waypoint(function(){
+    $('.feedback1').addClass('animated slideInUp');
+        
+    },{
+        offset:'60%'
+    }) 
+            $('.feedback2').waypoint(function(){
+    $('.feedback2').addClass('animated slideInRight');
+        
+    },{
+        offset:'80%'
+    }) 
+        $('.feedback3').waypoint(function(){
+    $('.feedback3').addClass('animated slideInLeft');
+        
+    },{
+        offset:'40%'
+    })    
+        $('.feedback4').waypoint(function(){
+    $('.feedback4').addClass('animated slideInUp');
+        
+    },{
+        offset:'60%'
+    }) 
+            $('.feedback5').waypoint(function(){
+    $('.feedback5').addClass('animated slideInRight');
+        
+    },{
+        offset:'80%'
+    }) 
     $('.centers').waypoint(function(){
     $('.centers').addClass('animated slideInRight');
         
@@ -318,7 +354,24 @@ $('a[href*="#"]')
     },{
         offset:'50%'
     })
-    
+        $('.js--wp-1-2-0').waypoint(function(){
+    $('.js--wp-1-2-0').addClass('animated fadeIn');
+        
+    },{
+        offset:'50%'
+    })
+        $('.js--wp-1-2-1').waypoint(function(){
+    $('.js--wp-1-2-1').addClass('animated fadeIn');
+        
+    },{
+        offset:'60%'
+    })
+        $('.js--wp-1-2-2').waypoint(function(){
+    $('.js--wp-1-2-2').addClass('animated fadeIn');
+        
+    },{
+        offset:'70%'
+    })
         $('.js--wp-2').waypoint(function(){
         $('.js--wp-2').addClass('animated fadeInUp');
         

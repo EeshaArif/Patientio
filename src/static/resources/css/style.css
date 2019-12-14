@@ -498,7 +498,7 @@ input[type=submit]
 {
         background-color: rgba(124, 186, 190, 0.88);
     border:1px solid rgba(124, 186, 190, 0.88);
-    margin-left:20px;
+    margin-left:15px;
 }
 .btn-ghost:link,
 .btn-ghost:visited
@@ -572,9 +572,90 @@ header{
 .main-row{
     padding-top: 5%;
 }
-.section-doctor .box{
+.doctor img{
+    max-height: 40vh;
+    overflow: hidden;
+
+}
+.plan-box{
+    
+ 
+    opacity: 1;
+    width:100%;
+   height:auto;
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+    -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+    transition: opacity 0.5s, -webkit-transform 0.5s;
+    transition: transform 0.5s, opacity 0.5s;
+    transition: transform 0.5s, opacity 0.5s, -webkit-transform 0.5s;
+}
+.plan-box:hover{
+    opacity: 0.9;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    
+    
+}
+.photo{
+    margin-top:-10px;
+   
+    margin-left:-10px;
+    overflow: hidden;
+    width:107%;
+ 
+}
+.section-plans{
+    background-color: #f5f2f2;
+}
+.plan-box h3{
+    margin-top:-20px;
+     margin-right: -10px;
+    margin-left: -10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    /*background-color: rgba(124, 186, 190, 0.88);*/
+    font-weight: 300;
+}
+.plan-box{
+    background-color: #fff;
+    border-radius: 10px;
+    width:95%;
+    /*margin-left: 5%;*/
+    
+    box-shadow:11px -6px 19px -5px #b5b0b0;
+        
+    
+}
+.plan-box div{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e2e2e2;
+}
+.plan-box div:last-child{
+    text-align: center;
+    border: 0;
+}
+.plan-box figure{
+    padding:0px;
+    
+}
+
+.plan-box div:first-child{
+    background-color: #f5f5f5;
+  
+}
+
+
+
+.section-doctor .box{                                   
     max-width: 30%;
 
+}
+.section-doctor h2{
+    margin-top:70px;
+    margin-bottom: 110px;
 }
 .header-dept{
         background-image:linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.9)),url(img/dep3.jpg);
@@ -692,7 +773,7 @@ header{
         margin: 0 auto;
             max-width: 1140px;
 
-
+     
      padding: 80px 60px;
 }
 
@@ -912,10 +993,8 @@ header{
     font-size: 70%
 }
 
-.photos h3{
-    text-align: center;
-}
-.photo {
+
+/*.photo {
     
     width:95%;
     margin:0;
@@ -924,27 +1003,8 @@ header{
     
     margin-bottom: 10%;
     
-}
-.photo img{
-    
- 
-    opacity: 0.8;
-    width:100%;
-   height:auto;
-    -webkit-transform: scale(1.15);
-    transform: scale(1.15);
-    -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
-    transition: opacity 0.5s, -webkit-transform 0.5s;
-    transition: transform 0.5s, opacity 0.5s;
-    transition: transform 0.5s, opacity 0.5s, -webkit-transform 0.5s;
-}
-.photo img:hover{
-    opacity: 1;
-    -webkit-transform: scale(1.03);
-    transform: scale(1.03);
-    
-    
-}
+}*/
+
 .container {
   position: relative;
 }
@@ -1214,22 +1274,6 @@ cite img{
     vertical-align: middle;
 }
 
-.section-plans{
-    background-color: #f5f2f2;
-}
-
-.plan-box{    
-    padding: 1% 2%;
-    border-radius: 60px;
-    border-color: rgba(170, 166, 166, 0.62);
-    background-color: rgba(233, 235, 234, 0.4);
-
-    box-shadow: 1px 1px 1px 2px rgba(170, 166, 166, 0.62);
-    
-  
-        
-    
-}
 
 .section-testprogram div h3,
 .section-testprogram div p,
@@ -1291,7 +1335,7 @@ cite img{
 
  
 }
-
+/*
 .plan-box p{
     
     min-height: 185px;
@@ -1313,7 +1357,7 @@ cite img{
     
     
 }
-
+*/
 
 
 /*-----------------------------------------------*/
@@ -1470,7 +1514,8 @@ footer p{
 .js--wp-6-7.animated,
 .js--wp-6-8.animated,
 .js--wp-6-9.animated,
-.js--wp-6-10.animated{
+.js--wp-6-10.animated,
+.js--flip-1.animated{
     animation-delay: 0.3s;
     opacity: 1;
 }
@@ -1481,7 +1526,12 @@ footer p{
 .js--wp-2-9,
 .js--wp-2-10,
 .js--wp-2-1,.js--wp-2-2,.js--wp-2-3,.js--wp-2-4,.js--wp-2-5,
-.js--wp-1,.js--wp-2,.js--wp-1-2,.js--wp-3,.js--wp-3-2,
+.js--wp-1,.js--wp-2,
+.js--wp-1-2,
+.js--wp-1-2-0,
+.js--wp-1-2-1,
+.js--wp-1-2-2,
+.js--wp-3,.js--wp-3-2,
 .js--wp-a1,.js--wp-a2,.js--wp-a3,.js--wp-a4,.js--wp-51
 {
     opacity: 0;
@@ -1496,7 +1546,12 @@ footer p{
 }
 .centers,
 .schedule,
-.feedback,
+.feedback0,
+.feedback1,
+.feedback2,
+.feedback3,
+.feedback4,
+.feedback5,
 .contactbtn,
 .resultbtn,
 .letterbtn,
@@ -1526,6 +1581,9 @@ footer p{
 .js--wp-51.animated,
 .js--wp-1.animated,
 .js--wp-1-2.animated,
+.js--wp-1-2-0.animated,
+.js--wp-1-2-1.animated,
+.js--wp-1-2-2.animated,
 .js--wp-2.animated,
 .js--wp-3.animated,
 .js--wp-a.animated,
@@ -1535,9 +1593,15 @@ footer p{
 .js--wp-a2.animated,
 .js--wp-a3.animated,
 .js--wp-a4.animated,
+
 .centers.animated,
 .schedule.animated,
-.feedback.animated,
+.feedback0.animated,
+.feedback1.animated,
+.feedback2.animated,
+.feedback3.animated,
+.feedback4.animated,
+.feedback5.animated,
 .resultbtn.animated,
 .letterbtn.animated,
 .sidebar1.animated{
