@@ -481,6 +481,7 @@ input[type=submit]
     
     }
 
+
 .btn-full:link,
 .btn-full:visited,
 input[type=submit]
@@ -491,12 +492,21 @@ input[type=submit]
     margin-right: 15px;
    
     }
+.btn-full1:link,
+.btn-full1:visited,
+input[type=submit]
+{
+        background-color: rgba(124, 186, 190, 0.88);
+    border:1px solid rgba(124, 186, 190, 0.88);
+    margin-left:20px;
+}
 .btn-ghost:link,
 .btn-ghost:visited
 {
     border:1px solid #3b6969;
     color: #3b6969; 
 }
+
 .btn2:link,
 .btn2:visited
 {
@@ -521,6 +531,17 @@ input[type=submit]:hover
     border:1px solid rgba(124, 186, 190, 0.88);
     
     }
+.btn-full1:hover,
+.btn-full1:active
+{
+    border:1px solid #3b6969;
+    background-color:#3b6969;
+
+    
+    }
+
+
+
 .btn-ghost:hover,
 .btn-ghost:active
 {

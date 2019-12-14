@@ -84,19 +84,23 @@
                     <!--<img src="{{media_url}}{{ forloop.counter.image }}" alt="lisbon">-->
                     
                     <img src="{{ doctor.image.url }}" alt="{{ doctor.first_name }} {{doctor.last_name}}">
-                    <h3>{{doctor.person.first_name}} {{doctor.person.last_name}}</h3>
+                    <h3>{{doctor.first_name}} {{doctor.last_name}}</h3>
                     <div class="city-feature">
                           <i class="ion-ios-person icon-small"></i>
                         {{doctor.designation}}
                     </div>
                     <div class="city-feature">
-                          <i class="ion-ios-star icon-small"></i>
-                        {{doctor.person.email}}
+                          <i class="material-icons icon-small">email</i>
+                       <a href="mailto: {{doctor.phone}}">{{doctor.email}}</a>
                     </div>
                     <div class="city-feature">
-                          <i class="ion-social-twitter icon-small"></i>
-                       <a href="#">{{doctor.person.phone}}</a> 
+                          <i class="material-icons icon-small">
+call </i>
+                       {{doctor.phone}}
                     </div>
+                    <div>         
+                     <a class="btn btn-full1" href="{% url 'about_us' %}" target="_blank">Appointment </a>
+         </div>
                 </div>
 
 {% endfor %}
