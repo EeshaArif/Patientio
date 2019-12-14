@@ -581,6 +581,83 @@ header{
     overflow: hidden;
 
 }
+.signinform{
+    text-align:center;
+        
+    width:50%;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-left: 25%;
+    margin-top:5%;
+
+
+    /*margin-left: 5%;*/
+    
+    box-shadow:11px -6px 19px -5px #b5b0b0;
+}
+.section-signinform header{
+    max-height: 100vh;
+}
+.primaryAction:link,
+.primaryAction:visited,
+input[type=submit]
+{
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px; 
+    color:#fff;
+     -webkit-transition: background-color 0.2s, border 0.2s, color 0.2s;
+     transition: background-color 0.2s, border 0.2s, color 0.2s;
+    
+    }
+
+.primaryAction:link,
+.primaryAction:visited,
+input[type=submit]
+{
+    /*flatuicolors*/
+    border:1px solid #3b6969;
+    background-color:#3b6969;
+    margin-right: 15px;
+   
+    }
+.primaryAction:hover,
+.primaryAction:active
+{
+    background-color: rgba(124, 186, 190, 0.88);
+    border:1px solid rgba(124, 186, 190, 0.88);
+    
+    }
+.section-signinform .box{
+    color: #fff;
+    text-align: center;
+
+}
+.section-signinform h1{
+    padding-top:5%;
+    text-align: center;
+}
+.signinform label{
+    font-weight: 400;
+    padding-right: 5%;
+}
+#id_remember{
+    padding-right: 2%;
+    margin-left: -2%;
+    margin-right: -8%;
+}
+.signinform input{
+    min-height: 20%;
+    min-width: 60%;
+    max-width: 60%;
+}
+.signinform p{
+    padding: 3%;
+
+    border-bottom: 1px solid #e2e2e2;
+}
 .plan-box{
     
  
