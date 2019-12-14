@@ -23,7 +23,7 @@
                 
                      <!--    <li><a href="{% url 'about_us' %}">About Us</a></li>-->
                 {% if request.user.is_authenticated %}   
-                <a class ="btn btn-full btnlogin" href="{% url 'profile' %}"><span>{{request.user}}</span></a>
+                <a class ="btn btn-ghost btnlogin1 btn2" href="{% url 'profile' %}"><span>{{request.user}}</span></a>
                 {% else %}
 <a class ="btn btn-full btnlogin" href="{% url 'profile' %}"><span>Log In</span></a>
 {% endif %}

@@ -549,9 +549,11 @@ input[type=submit]:hover
     color: #fff;
 }
 
-.btnlogin{
+.btnlogin, .btnlogin1{
      margin-left:15%;
 }
+
+
 
 /*-----------------------------------------------*/
                   /* HEADER */

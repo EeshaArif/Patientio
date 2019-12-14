@@ -21,11 +21,15 @@ $(document).ready(function () {
     })
     
     var $navigation = $('nav');
+
   
     /*add/remove the sticky bar according to sreensize*/  
     $(window).ready(function() {
-    if (window.innerWidth <= 992) {$navigation.addClass('sticky');}
+    if (window.innerWidth <= 992) {$navigation.addClass('sticky');
+
+}
     else {
+        
         $navigation.removeClass('sticky');
     }
   
@@ -52,8 +56,10 @@ $(document).ready(function () {
     $('.js--section-declare').waypoint(function (direction) {
         if (direction === "down") {
             $('nav').addClass('sticky');
+                $('.btnlogin1').removeClass('btn2');
             
         } else if(window.innerWidth > 992){$('nav').removeClass('sticky');
+        $('.btnlogin1').addClass('btn2');
                    }
     }, {
         offset: '60px;'
