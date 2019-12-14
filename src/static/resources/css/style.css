@@ -595,6 +595,12 @@ header{
     
     box-shadow:11px -6px 19px -5px #b5b0b0;
 }
+.signout header{
+    padding-top: 15%;
+}
+.signout .long-copy{
+    padding-right: 5%;
+}
 .section-signinform header{
     max-height: 100vh;
 }
