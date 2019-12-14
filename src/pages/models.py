@@ -1,24 +1,18 @@
 from django.db import models
-#from phonenumber_field.modelfields import PhoneNumberField
-import datetime
+from django.conf import settings
 from django.utils import timezone
+import datetime
 # Create your models here.
 
-class Person(models.Model):
-    first_name = models.CharField(max_length = 150)
-    last_name = models.CharField(max_length = 150)
-    address = models.CharField(max_length = 200, null = True, blank = True)
-    phone = models.CharField(max_length = 20)
-    age = models.IntegerField()
-    sex = models.CharField(max_length = 15)
-    email = models.EmailField(null = True, blank = True)
-    image = models.ImageField(null = True, blank = True)
-
-    def __str__(self):
-        return '%s %s' %(self.first_name, self.last_name)
-
 class Doctor(models.Model):
-    person = models.ForeignKey(Person, on_delete=models.CASCADE)
+    first_name = models.CharField(max_length = 150, null = True, blank = True)
+    last_name = models.CharField(max_length = 150, null = True, blank = True)
+    address = models.CharField(max_length = 200, null = True, blank = True)
+    phone = models.CharField(max_length = 20, null = True, blank = True)
+    age = models.IntegerField(null = True, blank = True)
+    sex = models.CharField(max_length = 15, null = True, blank = True)
+    email = models.EmailField(null = True, blank = True)
+    image = models.FileField(upload_to = 'images/', default = '')
     designation = models.CharField(max_length = 150)
     degree = models.CharField(max_length = 150)
     experience = models.IntegerField()
@@ -31,17 +25,28 @@ class Doctor(models.Model):
     end_time = models.TimeField('end time')
 
     def __str__(self):
-        return '%s %s' %(self.person.first_name, self.person.last_name)
+        return '%s %s' %(self.first_name, self.last_name)
 
-class Patient(models.Model):
-    person = models.ForeignKey(Person, on_delete=models.CASCADE)
-    doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE)
+class Appointment(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null = True, blank = True)
+    date = models.DateField('date selected')
+    time = models.TimeField('time selected')
+    doctor = models.IntegerField(null = True, blank = True)
+    disease_option = models.CharField(max_length = 50, null = True, blank = True)
 
     def __str__(self):
-        return '%s %s' %(self.person.first_name, self.person.last_name)
+        return '%s' %(self.date)
 
 class History(models.Model):
-    patient = models.ForeignKey(Patient, on_delete=models.CASCADE, related_name='p_history')
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null = True, blank = True)
+    first_name = models.CharField(max_length = 150,null = True, blank = True)
+    last_name = models.CharField(max_length = 150,null = True, blank = True)
+    address = models.CharField(max_length = 200, null = True, blank = True)
+    phone = models.CharField(max_length = 20,null = True, blank = True)
+    age = models.IntegerField(null = True, blank = True)
+    sex = models.CharField(max_length = 15,null = True, blank = True)
+    email = models.EmailField(null = True, blank = True)
+    image = models.FileField(upload_to = 'images/', default = '')
     occupation = models.CharField(max_length = 100, null = True, blank = True)
     presenting_complaint = models.TextField(null = True, blank = True)
     presenting_complaint_detail = models.TextField(null = True, blank = True)
@@ -54,33 +59,54 @@ class History(models.Model):
     economic_status = models.TextField(null = True, blank = True)
 
     def __str__(self):
-        return '%s %s' %(self.patient.person.first_name, self.patient.person.last_name)
+        return '%s %s' %(self.first_name, self.last_name)
 
 class LabDoc(models.Model):
-    person = models.ForeignKey(Person, on_delete=models.CASCADE)
+    first_name = models.CharField(max_length = 150, null = True, blank = True)
+    last_name = models.CharField(max_length = 150, null = True, blank = True)
+    address = models.CharField(max_length = 200, null = True, blank = True)
+    phone = models.CharField(max_length = 20, null = True, blank = True)
+    age = models.IntegerField(null = True, blank = True)
+    sex = models.CharField(max_length = 15, null = True, blank = True)
+    email = models.EmailField(null = True, blank = True)
+    image = models.FileField(upload_to = 'images/', default = '')
     designation = models.CharField(max_length = 150)
     degree = models.CharField(max_length = 150)
     experience = models.IntegerField()
 
     def __str__(self):
-        return '%s %s' %(self.person.first_name, self.person.last_name)
+        return '%s %s' %(self.first_name, self.last_name)
 
 class Receptionist(models.Model):
-    person = models.ForeignKey(Person, on_delete=models.CASCADE)
+    first_name = models.CharField(max_length = 150, null = True, blank = True)
+    last_name = models.CharField(max_length = 150, null = True, blank = True)
+    address = models.CharField(max_length = 200, null = True, blank = True)
+    phone = models.CharField(max_length = 20, null = True, blank = True)
+    age = models.IntegerField(null = True, blank = True)
+    sex = models.CharField(max_length = 15, null = True, blank = True)
+    email = models.EmailField(null = True, blank = True)
+    image = models.FileField(upload_to = 'images/', default = '')
     degree = models.CharField(max_length = 150)
     experience = models.IntegerField()
 
     def __str__(self):
-        return '%s %s' %(self.person.first_name, self.person.last_name)
+        return '%s %s' %(self.first_name, self.last_name)
 
 class Nurse(models.Model):
-    person = models.ForeignKey(Person, on_delete=models.CASCADE)
+    first_name = models.CharField(max_length = 150, null = True, blank = True)
+    last_name = models.CharField(max_length = 150, null = True, blank = True)
+    address = models.CharField(max_length = 200, null = True, blank = True)
+    phone = models.CharField(max_length = 20, null = True, blank = True)
+    age = models.IntegerField(null = True, blank = True)
+    sex = models.CharField(max_length = 15, null = True, blank = True)
+    email = models.EmailField(null = True, blank = True)
+    image = models.FileField(upload_to = 'images/', default = '')
     designation = models.CharField(max_length = 150)
     degree = models.CharField(max_length = 150)
     experience = models.IntegerField()
 
     def __str__(self):
-        return '%s %s' %(self.person.first_name, self.person.last_name)
+        return '%s %s' %(self.first_name, self.last_name)
 
 class Curriculum(models.Model):
     doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE, related_name='curriculum')
@@ -110,20 +136,12 @@ class About(models.Model):
     def __str__(self):
         return '%s' %("About")
 
-class Appointment(models.Model):
-    doctor = models.ForeignKey(Doctor, on_delete=models.PROTECT, related_name='appointment', null = True, blank = True)
-    date = models.DateField('date selected')
-    time = models.TimeField('time selected')
-
-    def __str__(self):
-        return '%s' %(self.date)
-
 class Service(models.Model):
     service_title = models.CharField(max_length = 50)
     service_summary = models.CharField(max_length = 150)
     text = models.TextField()
-    image = models.ImageField(null = True, blank = True)
-    icon = models.ImageField(null = True, blank = True)
+    image = models.FileField(upload_to = 'images/', default = '')
+    icon = models.FileField(upload_to = 'images/', default = '')
 
     def __str__(self):
         return self.service_title
@@ -133,10 +151,10 @@ class Report(models.Model):
     date = models.DateField('date of report generation')
     result_summary = models.CharField(max_length = 200)
     investigations =models.TextField()
-    patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null = True, blank = True)
     lab_doctor = models.ForeignKey(LabDoc, on_delete=models.PROTECT)
     doctor = models.ForeignKey(Doctor, on_delete=models.PROTECT)
     test_price = models.DecimalField(max_digits=20, decimal_places=2)
 
     def __str__(self):
-        return '%s %s %s' %(self.test_name, self.patient.person.first_name, self.patient.person.last_name)
+        return self.test_name
