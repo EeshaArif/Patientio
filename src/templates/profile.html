@@ -2,75 +2,229 @@
 {% extends "base_.html" %}
 {% load static %}
             {% block content %}
-  <div class="">
-  <ul>
-    <li><a href="{% url 'home' %}">My Profile</a></li>
-    <li><a href="{% url 'about_us' %}">About Us</a></li>
-    <li><a href="{% url 'appointments_list' %}">Appointments</a></li>
-    <li><a href="{% url 'lab_reports' %}">Lab Reports</a></li>
-    <li><a href="{% url 'doctor_list' %}">Doctors</a></li>
-    <li><a href="{% url 'services' %}">Services</a></li>
-    <li><a href="{% url 'account_logout' %}">Logout</a></li>
+
+        <nav>
+            
+                      <ul class="main-nav js--main-nav">
+                        <li>
+                            <a href="{% url 'home' %}">Home</a>
+                        </li>
+                          <li>
+                            <a href="{% url 'appointments_list' %}">Appointments</a>
+                        </li>
+                     
+          
+                 <!--       <li>
+                            <a href="general.html">About us</a>
+                        </li>-->
+                    
+
+
+                        <li><a href="{% url 'doctor_list' %}">Doctors</a></li>
+
+                        <li><a href="{% url 'services' %}">Departments</a></li>
+                       <li><a href="{% url 'lab_reports' %}">Lab Reports</a></li>                     
+    <li><a class="" href="{% url 'account_logout' %}"><span>Logout</span></a></li>
   </ul>
-</div>
+
+</nav>
+
+<section class="section-declare  js--section-declare"></section>
 {% if message %}
 {{message}}
 {% endif %}
-{% for patient in history %}
-  <img src="{{ patient.image.url}}" alt="{{ patient.first_name }} {{patient.last_name}}">
-  <br>
-  <h4>First Name</h4>
-  <h4>{{patient.first_name}}</h4>
-  <br>
-  <h4>Last Name</h4>
-  <h4>{{patient.last_name}}</h4>
-  <br>
-  <h4>Age</h4>
-  <h4>{{patient.age}}</h4>
-  <br>
-  <h4>Gender</h4>
-  <h4>{{patient.sex}}</h4>
-  <br>
-  <h4>Email</h4>
-  <h4>{{patient.email}}</h4>
-  <br>
-  <h4>Addres</h4>
-  <h4>{{patient.address}}</h4>
-  <br>
-  <h4>Phone</h4>
-  <h4>{{patient.phone}}</h4>
-  <br>
-  <h4>Occupation</h4>
-  <h4>{{patient.occupation}}</h4>
-  <br>
-  <h4>Presenting Complaint</h4>
-  <h4>{{patient.presenting_complaint}}</h4>
-  <br>
-  <h4>Detail</h4>
-  <h4>{{patient.presenting_complaint_detail}}</h4>
-  <br>
-  <h4>Past Medical History</h4>
-  <h4>{{patient.past_medical_history}}</h4>
-  <br>
-  <h4>Past Surgical History</h4>
-  <h4>{{patient.past_surgical_history}}</h4>
-  <br>
-  <h4>Past Drug History</h4>
-  <h4>{{patient.past_drug_history}}</h4>
-  <br>
-  <h4>Drug Allergy</h4>
-  <h4>{{patient.drug_allergy}}</h4>
-  <br>
-  <h4>Vaccination History</h4>
-  <h4>{{patient.vaccination_history}}</h4>
-  <br>
-  <h4>Personal History</h4>
-  <h4>{{patient.personal_history}}</h4>
-  <br>
-  <h4>Economic Status</h4>
-  <h4>{{patient.economic_status}}</h4>
-  <br>
-  {% endfor %}
+     <section class="section-schedule js--section-features" id="features">
+      {% for patient in history %}
+                    <div class="row">
+
+                        <h2 class="guidelines">Your Profile</h2>
+                             <div class="col box ">
+                        <p class="long-copy">
+                          <strong> Econonomic Status: </strong><br> {{patient.economic_status}}<br>
+        
+                        </p>
+                        </div>    
+                    </div>
+
+            <div class="row js--wp-3">
+
+
+                <div class="row">
+
+                       <div class="col span-1-of-7">
+                <h4>Personal Information</h4>
+                                                <div class="container2">
+
+                                                  <ul class="responsive-table">
+                                                    <li class="table-header">
+                                                      <div class="coll coll-1"></div>
+                                                      <div class="coll coll-2"></div>
+    
+                                                    <li class="table-row">
+                                                      <div class="coll coll-1">First Name:</div>
+                                                      <div class="coll coll-2">{{patient.first_name}}
+                                                        </div>
+
+                                                    </li>                              <li class="table-row">
+                                                      <div class="coll coll-1">Last Name:</div>
+                                                      <div class="coll coll-2">{{patient.last_name}}
+
+                                                        </div>
+
+                                                    </li>                              <li class="table-row">
+                                                      <div class="coll coll-1">Age:</div>
+                                                      <div class="coll coll-2">
+{{patient.age}}
+                                                        </div>
+
+                                                    </li>                              <li class="table-row">
+                                                      <div class="coll coll-1">Gender:</div>
+                                                      <div class="coll coll-2">
+                                                        {{patient.sex}}
+
+                                                        </div>
+
+                                                    </li>                              <li class="table-row">
+                                                      <div class="coll coll-1"> Email:</div>
+                                                      <div class="coll coll-2">{{patient.email}}
+                                                        </div>
+
+                                                    </li>                              <li class="table-row">
+                                                      <div class="coll coll-1">Address:</div>
+                                                      <div class="coll coll-2">{{patient.address}}
+                                                        </div>
+                                                     
+                                                    
+
+                                                    </li>                              <li class="table-row">
+                                                      <div class="coll coll-1"> Contact No:</div>
+                                                      <div class="coll coll-2">{{patient.phone}}
+
+                                                        </div>
+
+                                                    </li>                              <li class="table-row">
+                                                      <div class="coll coll-1"> Occupation:</div>
+                                                      <div class="coll coll-2">{{patient.occupation}}
+
+                                                        </div>
+
+                                                    </li>                             
+
+
+
+                                                  </ul>
+                                                </div>
+
+                </div>
+
+                       <div class="col span-1-of-7">
+                <h4>Photograph</h4>
+                                                <div class="container2 photograph">
+
+                                                  <img src="{{ patient.image.url}}" alt="{{ patient.first_name }} {{patient.last_name}}">
+                                                </div>
+
+                </div>
+
+                </div>
+
+                    </section>
+
+                        <section class="section-outdoor">
+            <div class="row">
+                <h2  class="white-heading">
+PAST HISTORY</h2>
+            
+            </div>
+            <div class="row info1">
+        <h4>{{patient.personal_history}}</h4>
+        </div>
+            <div class="row">
+            <div class="col span-1-of-3 info">
+             
+                    <h4>Surgical History</h4> 
+                    <p>
+                        {{patient.past_surgical_history}}
+                </p>
+
+      
+                
+             </div>
+            
+             <div class="col span-1-of-3 info">
+           
+                 <h4>Drug History</h4>
+             <p>
+                 
+                {{patient.past_drug_history}}
+
+                 </p>
+                    
+       
+             </div>
+            
+             <div class="col span-1-of-3 info">
+            
+        
+                              <h4>Drug Allergy</h4>
+                 <p>{{patient.drug_allergy}}
+
+                 </p>
+                               
+               
+             </div> 
+        </div>
+    <div class="row">
+
+            
+             <div class="col span-1-of-7 info">
+           
+                 <h4>Medical History</h4>
+             <p>
+                 {{patient.past_medical_history}}
+
+                 </p>
+                    
+       
+             </div>
+            
+              <div class="col span-1-of-7 info">
+             
+                    <h4>Vaccination History</h4> 
+                    <p>
+                        {{patient.vaccination_history}}
+                </p>
+                
+         </div>
+        </div>
+      
+
+        </section>
+
+        <section>
+          
+
+                     <div class="row tags">
+                <div class="col row box plan-box feedback0">
+                  
+                    <h3><strong>Presenting Complaint</strong></h3>
+                    <p>{{patient.presenting_complaint}}</p>
+                     
+                </div>
+                
+                <div class="col row box plan-box feedback1">
+                    
+                    <h3><strong>Complaint Details</strong></h3>
+                    <p>{{patient.presenting_complaint_detail}}</p>
+                  
+                
+                
+                </div>       
+                </div>
+
+  {%  endfor  %}
+        </section>
+
 
 
 

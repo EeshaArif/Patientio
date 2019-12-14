@@ -736,7 +736,11 @@ input[type=submit]
   
 }
 
-
+.tags .plan-box{
+    padding:10%;
+    margin-top:10%;
+    margin-left:2%;
+}
 
 .section-doctor .box{                                   
     max-width: 30%;
@@ -1216,7 +1220,7 @@ input[type=submit]
 }
 
 .section-outdoor{
-     background-image:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(img/issb_groupTask.jpg);
+     background-image:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(img/dep2.jpg);
     background-size: cover;
     color: #fff;
     background-attachment: fixed;
@@ -1297,7 +1301,7 @@ input[type=submit]
 .section-aboutus {
     
 
-  background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(img/pak_soldiers.jpg);
+  background-image:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),url(img/db_resources/medicine-wallpapers-30722-3871422.jpg);
     color: #fff;
     background-size:cover;
     background-attachment: fixed;
@@ -1719,13 +1723,16 @@ footer p{
  
   margin-left: 20%;
 }
+.section-index .cd-intro-content{
+    margin-left:25%;
+  margin-top:10%;
+}
 .cd-intro-content {
  
   display:table-cell;
   vertical-align: middle;
   /*text-align:center;*/
-  margin-left:25%;
-  margin-top:10%;
+  
     
     
     
@@ -1974,14 +1981,17 @@ margin-bottom: 10px;
 .section-schedule p {
     text-align: center;
 }
-.section-schedule .long-copy span{
-    color:orangered;
+.section-schedule .long-copy {
+    padding-right:5%;
 }
 .dec{
     margin-top: 6%;
     text-align: center;
     font-weight: 400;
     margin-bottom: 6%;
+}
+.photograph img{
+    max-width:100%;
 }
 .container2 {
   max-width: 1000px;

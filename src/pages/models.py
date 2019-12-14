@@ -134,7 +134,7 @@ class About(models.Model):
     about_data = models.TextField()
 
     def __str__(self):
-        return '%s' %("About")
+        return '%s' %(self.about_data)
 
 class Service(models.Model):
     service_title = models.CharField(max_length = 50)

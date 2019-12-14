@@ -455,7 +455,7 @@ $('a[href*="#"]')
         $('.js--wp-3').addClass('animated fadeIn');
         
     },{
-        offset:'50%'
+        offset:'35%'
     })      
     $('.js--wp-3-2').waypoint(function(){
         $('.js--wp-3-2').addClass('animated fadeIn');
