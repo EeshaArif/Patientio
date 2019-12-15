@@ -713,6 +713,15 @@ input[type=submit]
     padding:0px;
     
 }
+#box5{
+    max-width:100%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.reports span{
+    float:right;
+   
+}
 
 .reports div:first-child{
     background-color: #f5f5f5;

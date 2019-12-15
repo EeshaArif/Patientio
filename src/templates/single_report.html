@@ -1,25 +1,99 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Report Detail</title>
-  </head>
-  <body>
-    <div class="">
-      <div class="">
-        
-        <h2>{{report.test_name}}</h2>
-        <h5>{{report.investigations}}</h5>
-        <p>{{report.result_summary}}</p>
-        <h5>{{report.lab_doctor.first_name}} {{report.lab_doctor.last_name}}</h5>
-        <h5>{{report.doctor.first_name}} {{report.doctor.last_name}}</h5>
-        <h5>{{report.date}}</h5>
-       <form action="{% url 'lab_report_delete' report.id %}" method="post">
+{% extends "base_.html" %}
+{% load static %}
+            {% block content %}
+
+             {% include 'navbar.html' %}
+
+             <section class="section-declare  js--section-declare"></section>
+{% if message %}
+        <section>
+          
+
+                     <div class="row tags">
+
+                           
+                           <div class="col row box plan-box feedback0">
+                            <h3><strong>Warning:</strong></h3>
+                            <div class="admin">
+<p class="">{{message}}</p>
+<a class="" href="/admin/">Admin</a>
+   </div>
+ </div>
+</div>
+
+</section>
+
+
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       <section class="section-doctor">
+            <div class="row js--wp-4">
+                <h2>Report Detail</h2>
+            
+            </div>
+
+
+            <div class="row"></div>
+
+             
+                <div class="reports2 box doctor reports js--wp-1-2-0" id="box5">
+             <!-- feedback{{forloop.counter0}}">-->
+                    <!--<img src="{{media_url}}{{ forloop.counter.image }}" alt="lisbon">-->
+               
+                    <h3 class="">Report ID: {{report.id}} </h3> 
+                    <div class="city-feature">
+                <strong>Test Name:  </strong><span>
+                        {{report.test_name}}</span>
+                    </div>
+                    <div class="city-feature">
+                         <strong>Date:  </strong><span>
+                       {{report.date}}</span>
+                    </div>
+                       <div class="city-feature">
+                            <strong>Lab Doctor: </strong><span>
+                   {{report.lab_doctor.first_name}} {{report.lab_doctor.last_name}}</span>
+                     </div>
+                        <div class="city-feature">
+                            <strong>Doctor: </strong><span>
+                   {{report.doctor.first_name}} {{report.doctor.last_name}}</span>
+                     </div>
+                    <div class="city-feature">
+                            <strong>Summary:  </strong><br><br>
+                       {{report.result_summary}}
+                    </div>
+                            <div class="city-feature">
+                            <strong>Investigation: </strong><br><br>
+                        {{report.investigations}}
+                    </div>
+
+                    <div>         
+                           <form action="{% url 'lab_report_delete' report.id %}" method="post">
     {% csrf_token %}
     <input type="submit" value="Delete">
-</form>
+</form>        
 
-    </div>
-  </div>
-  </body>
-</html>
+         </div>
+
+                </div>
+
+
+<div class="row">
+</div>
+</section>
+{% endblock %}
+
+
+
