@@ -31,8 +31,23 @@
 
 <section class="section-declare  js--section-declare"></section>
 {% if message %}
-{{message}}
+        <section>
+          
+
+                     <div class="row tags">
+
+                           
+                           <div class="col row box plan-box feedback0">
+                            <h3><strong>Warning:</strong></h3>
+                            <div class="admin">
+<p class="">{{message}}</p>
+<a class="" href="/admin/">Admin</a>
+   </div>
+ </div>
+</div>
+</section>
 {% endif %}
+
      <section class="section-schedule js--section-features" id="features">
       {% for patient in history %}
                     <div class="row">
@@ -40,7 +55,7 @@
                         <h2 class="guidelines">Your Profile</h2>
                              <div class="col box ">
                         <p class="long-copy">
-                          <strong> Econonomic Status: </strong><br> {{patient.economic_status}}<br>
+               <strong> Econonomic Status: </strong><br> {{patient.economic_status}}<br>
         
                         </p>
                         </div>    
@@ -201,10 +216,8 @@ PAST HISTORY</h2>
 
         </section>
 
-        <section>
-          
-
-                     <div class="row tags">
+<section>
+ <div class="row tags">
                 <div class="col row box plan-box feedback0">
                   
                     <h3><strong>Presenting Complaint</strong></h3>

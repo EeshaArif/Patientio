@@ -14,6 +14,11 @@
         <h5>{{report.lab_doctor.first_name}} {{report.lab_doctor.last_name}}</h5>
         <h5>{{report.doctor.first_name}} {{report.doctor.last_name}}</h5>
         <h5>{{report.date}}</h5>
+       <form action="{% url 'lab_report_delete' report.id %}" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Delete">
+</form>
+
     </div>
   </div>
   </body>

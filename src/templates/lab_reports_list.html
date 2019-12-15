@@ -1,26 +1,94 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <div class="">
-      <ul>
-        <li><a href="{% url 'home' %}">My Profile</a></li>
-        <li><a href="{% url 'about_us' %}">About Us</a></li>
-        <li><a href="{% url 'appointments_list' %}">Appointments</a></li>
-        <li><a href="{% url 'lab_reports' %}">Lab Reports</a></li>
-        <li><a href="{% url 'doctor_list' %}">Doctors</a></li>
-        <li><a href="{% url 'services' %}">Services</a></li>
-        <li><a href="{% url 'account_logout' %}">Logout</a></li>
-      </ul>
-  </div>
-  {% if message %}
-  {{message}}
-  {% endif %}
+{% extends "base_.html" %}
+{% load static %}
+            {% block content %}
+
+             {% include 'navbar.html' %}
+
+             <section class="section-declare  js--section-declare"></section>
+{% if message %}
+        <section>
+          
+
+                     <div class="row tags">
+
+                           
+                           <div class="col row box plan-box feedback0">
+                            <h3><strong>Warning:</strong></h3>
+                            <div class="admin">
+<p class="">{{message}}</p>
+<a class="" href="/admin/">Admin</a>
+   </div>
+ </div>
+</div>
+
+</section>
+
+
+{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       <section class="section-doctor">
+            <div class="row js--wp-4">
+                <h2>Reports</h2>
+            
+            </div>
+
+
+            <div class="row"></div>
+{% for report in reports %}
+             
+                <div class="col span-1-of-3 box doctor reports js--wp-1-2-0">
+             <!-- feedback{{forloop.counter0}}">-->
+                    <!--<img src="{{media_url}}{{ forloop.counter.image }}" alt="lisbon">-->
+               
+                    <h3 class="">Report ID: {{report.id}} </h3> 
+                    <div class="city-feature">
+                        <i class="material-icons icon-small">
+assignment_late </i>
+                        {{report.test_name}}
+                    </div>
+                    <div class="city-feature">
+                          <i class="material-icons icon-small">schedule</i>
+                       {{report.date}}
+                    </div>
+                    <div class="city-feature">
+                            <i class="material-icons icon-small">assignment</i>
+                       {{report.result_summary}}
+                    </div>
+                    <div>         
+                     <a class="btn btn-full1" href="{% url 'report_detail' report.id %}" target="_blank">Read More </a>         
+
+         </div>
+
+                </div>
+
+{% endfor %}
+
+<div class="row">
+</div>
+</section>
+{% endblock %}
+<!--
+<div class="row">
+</div>
+            
+
+
+
     {% for report in reports %}
-<!-- doc info -->
+
 <div class="">
   <p class="">{{report.id}}</p>
 <div class="">
@@ -37,5 +105,6 @@
 </form>
 </div>
 {% endfor %}
-  </body>
-</html>
+
+-->
+
