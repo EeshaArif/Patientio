@@ -136,13 +136,13 @@
   
   <form class="" action="{% url 'booking' doctor.id %}" method="post">
             {% csrf_token %}
-            Time: <br>
-        <input type="date" name="Appointment Date">
-        <input type="time" name="Appointment Time">
+            Date/Time: <br>
+        <input type="date" name="Appointment Date" required = True>
+        <input type="time" name="Appointment Time" required = True>
       </div>
       <div class="">
         Disease:<br>
-          <input type="text" name="issue" value="Disease Name">
+          <input type="text" name="issue" >
           <div class="">
             <input type="submit" name="Book Now" value="Book Now">
           </div>
