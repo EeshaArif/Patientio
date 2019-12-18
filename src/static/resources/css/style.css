@@ -714,9 +714,16 @@ input[type=submit]
     
 }
 #box5{
+
     max-width:100%;
     padding-left: 10%;
     padding-right: 10%;
+}
+#box5:hover{
+    scale:none;
+}
+#box5.animated{
+    animation-delay: 0.8s;
 }
 .reports span{
     float:right;
@@ -1093,7 +1100,9 @@ input[type=submit]
 
 .sticky .logo { display: none;}
 .sticky .logo-format{display: block;}
-
+#hieght{
+    min-height: 95vh;
+}
 .section-declare{
    
   background: linear-gradient(to bottom right, #332c2a, rgba(55, 109, 72, 0.69));
@@ -1684,6 +1693,12 @@ footer p{
     opacity: 1;
 }
 
+#delay.animated{
+    animation-delay: 1s;
+}
+#delay2.animated{
+    animation-delay: 0.7s;
+}
 .js--wp-2-6,
 .js--wp-2-7,
 .js--wp-2-8,

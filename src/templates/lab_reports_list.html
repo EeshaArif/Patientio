@@ -2,12 +2,11 @@
 {% load static %}
             {% block content %}
 
-             {% include 'navbar.html' %}
-
-             <section class="section-declare  js--section-declare"></section>
+             
+            
 {% if message %}
-        <section>
-          
+        <section class="js--section-declare">
+          {% include 'navbar.html' %}
 
                      <div class="row tags">
 
@@ -24,7 +23,7 @@
 </section>
 
 
-{% endif %}
+{% else %}
 
 
 
@@ -39,8 +38,9 @@
 
 
 
-       <section class="section-doctor">
-            <div class="row js--wp-4">
+       <section class="section-doctor js--section-declare">
+        {% include 'navbar.html' %}
+            <div class="row js--wp-4" id="delay2">
                 <h2>Reports</h2>
             
             </div>
@@ -49,7 +49,7 @@
             <div class="row"></div>
 {% for report in reports %}
              
-                <div class="col span-1-of-3 box doctor reports js--wp-1-2-0">
+                <div class="col span-1-of-3 box doctor reports js--wp-1-2-0" id="delay">
              <!-- feedback{{forloop.counter0}}">-->
                     <!--<img src="{{media_url}}{{ forloop.counter.image }}" alt="lisbon">-->
                
@@ -79,6 +79,7 @@ assignment_late </i>
 <div class="row">
 </div>
 </section>
+{% endif %}
 {% endblock %}
 <!--
 <div class="row">

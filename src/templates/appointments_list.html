@@ -2,14 +2,14 @@
 {% load static %}
             {% block content %}
 
-             {% include 'navbar.html' %}
+             
 
-             <section class="section-declare  js--section-declare"></section>
+             
 {% if message %}
-        <section>
+        <section class="js--section-declare" id="hieght">
           
-
-                     <div class="row tags">
+{% include 'navbar.html' %}
+                     <div class="row tags ">
 
                            
                            <div class="col row box plan-box feedback0">
@@ -20,14 +20,13 @@
    </div>
  </div>
 </div>
-
+<div class="row">
+</div>
 </section>
 
-
-{% endif %}
-
-
-
+<div class="row">
+</div>
+{% else %}
 
 
 
@@ -39,7 +38,11 @@
 
 
 
-       <section class="section-doctor">
+
+
+
+       <section class="section-doctor js--section-declare">
+        {% include 'navbar.html' %}
             <div class="row js--wp-4">
                 <h2>Appointments</h2>
             
@@ -90,6 +93,7 @@ assignment_late </i>
 <div class="row">
 </div>
 </section>
+{% endif %}
 {% endblock %}
 
 
@@ -102,25 +106,3 @@ assignment_late </i>
 
 
 
-{% if message %}
-{{message}}
-{% endif %}
-{% for appointment in appointments %}
-<div class="">
-  <p class="">Appointment number {{appointment.id}}</p>
-  <div class="">
-
-<p>{{appointment.date}}</p>
-<p>{{appointment.time}}</p>
-<p>{{appointment.disease_option}}</p>
-</div>
-
-<div class="">
-<form action="{% url 'appointment_delete' appointment.id %}" method="post">
-    {% csrf_token %}
-    <input type="submit" value="Delete">
-</form>
-</div>
-{% endfor %}
-  </body>
-</html>
