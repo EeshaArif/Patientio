@@ -11,12 +11,12 @@
 
 <p class="box long-copy">{% trans 'Are you sure you want to sign out?' %}</p>
 
-<form class="signinform" method="post" action="{% url 'account_logout' %}">
+<form class="" id="signoutform" method="post" action="{% url 'account_logout' %}">
   {% csrf_token %}
   {% if redirect_field_value %}
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
   {% endif %}
-  <button type="submit">{% trans 'Sign Out' %}</button>
+  <button class="btn btn-full1 btn2" type="submit">{% trans 'Sign Out' %}</button>
 </form>
 
 </header>

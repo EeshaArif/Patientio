@@ -40,12 +40,12 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
   {% if redirect_field_value %}
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
-  <p>
+<!--  <p>
   <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-</p>
-<p>
-  <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
-</p>
+</p>-->
+
+  <button class="btn btn-full1 primaryAction" type="submit">{% trans "Sign In" %}</button>
+
 </form>
 </header>
 </section>
