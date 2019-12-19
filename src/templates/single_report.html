@@ -2,12 +2,12 @@
 {% load static %}
             {% block content %}
 
-             {% include 'navbar.html' %}
+             
 
              <section class="section-declare  js--section-declare"></section>
 {% if message %}
-        <section>
-          
+        <section class="js--section-declare">
+          {% include 'navbar.html' %}
 
                      <div class="row tags">
 
@@ -24,7 +24,7 @@
 </section>
 
 
-{% endif %}
+{% else %}
 
 
 
@@ -39,7 +39,8 @@
 
 
 
-       <section class="section-doctor">
+       <section class="section-doctor js--section-declare">
+         {% include 'navbar.html' %}
             <div class="row js--wp-4">
                 <h2>Report Detail</h2>
             
@@ -93,6 +94,7 @@
 <div class="row">
 </div>
 </section>
+{% endif %}
 {% endblock %}
 
 
