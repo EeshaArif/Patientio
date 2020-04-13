@@ -1,7 +1,7 @@
 # Patientio~
 ### Where Your Health Becomes Priority~
 #### Introduction:
-Patientio is a Hospital Management System built on Django. Great consideration has been given to its User Interface using animations and also security by implementing allauth. 
+Patientio is a Hospital Management System built on [Django](https://www.djangoproject.com/). Great consideration has been given to its User Interface using animations and also security by implementing allauth. 
 
 #### Execution:
 Go to the main directory and type the following commands 
