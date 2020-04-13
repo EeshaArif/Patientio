@@ -12,3 +12,11 @@ Go to the main directory and type the following commands
 #### Admin Credentials:
 - __Username:__ EeshaArif
 - __Password:__ django123
+
+#### The Application:
+
+
+[demo-ss-1](https://github.com/EeshaArif/Patientio/blob/master/Screenshot%20(263).png)
+[demo-ss-2](https://github.com/EeshaArif/Patientio/blob/master/Screenshot%20(264).png)
+[demo-ss-3](https://github.com/EeshaArif/Patientio/blob/master/Screenshot%20(266).png)
+[demo-ss-4](https://github.com/EeshaArif/Patientio/blob/master/Screenshot%20(267).png)
